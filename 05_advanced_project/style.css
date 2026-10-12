@@ -7,6 +7,102 @@
   font-family: "Roboto", sans-serif;
 }
 
+section { 
+  background-color: rgb(245, 245, 245);
+}
+
+p {
+  line-height: 1.5;
+  font-size: 16px;
+}
+
+a {
+  text-decoration: none;
+}
+
+button {
+  cursor: pointer;
+}
+
+.click {
+  transition: transform 0.2s ease;
+}
+
+.click:hover {
+  transform: scale(1.1); 
+}
+.click:active {
+  transform: scale(.8);
+}
+
+.navy {
+  color: #061b3d !important;
+}
+
+.teal {
+  color: #00c9b7 !important;
+}
+
+/* 
+
+  Landing Page
+
+*/
+
+#landing-page {
+  min-height: 100vh;
+}
+
+.header {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  max-width: 1000px;
+  padding: 20px;  
+} 
+
+.header__para {
+  font-size: 18px;
+  line-height: 2;
+  color: #555;
+  max-width: 450px;
+}
+
+.social__list {
+  margin-top: 16px;
+  display: flex;
+  
+}
+
+.social__link {
+  background-color: #061b3d;
+  color: white;
+  padding: 6px;
+  width: 32px;
+  height: 32px;
+  font-size: 16px;
+  margin-right: 12px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+}
+
+.mail__btn {
+  width: 70px;
+  height: 70px;
+  font-size: 32px;
+  border-radius: 50%;
+  border: none;
+  background-color: #061b3d;
+  color: white;
+  position: absolute;
+  bottom: 32px;
+  right: 42px;
+}
+
 /* 
 
   Navigation
@@ -26,7 +122,7 @@ nav {
   max-width: 1200px;
   height: 100px;
   margin: 0 auto;
-  padding: 20px;
+  padding: 0 20px;
 }
 
 .nav__link--list {
@@ -41,11 +137,23 @@ nav {
 .nav__link--anchor {
   text-decoration: none;
   font-size: 20px;
-  color: #242424;
+  color: #272727;
   font-weight: 700;
   padding: 8px;
 }
 
 .nav__link--anchor:hover {
   text-decoration: underline;
+}
+
+.title {
+  font-size: 76px;
+  margin-bottom: 12px;
+  text-align: left;
+  line-height: 1;
+}
+
+.title--secondary {
+  font-size: 48px;
+  font-weight: 700;
 }
