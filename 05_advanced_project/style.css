@@ -70,10 +70,29 @@ button {
   max-width: 450px;
 }
 
+.title {
+  font-size: 76px;
+  margin-bottom: 12px;
+  text-align: left;
+  line-height: 1;
+}
+
+.title--secondary {
+  font-size: 48px;
+  font-weight: 700;
+}
+
 .social__list {
   margin-top: 16px;
   display: flex;
   
+}
+
+.social__link,
+.mail__btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .social__link {
@@ -84,16 +103,13 @@ button {
   height: 32px;
   font-size: 16px;
   margin-right: 12px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
   border-radius: 50%;
 }
 
 .mail__btn {
-  width: 70px;
-  height: 70px;
-  font-size: 32px;
+  width: 40px;
+  height: 40px;
+  font-size: 24px;
   border-radius: 50%;
   border: none;
   background-color: #061b3d;
@@ -137,7 +153,7 @@ nav {
 .nav__link--anchor {
   text-decoration: none;
   font-size: 20px;
-  color: #272727;
+  color: #061b3d;
   font-weight: 700;
   padding: 8px;
 }
@@ -146,14 +162,4 @@ nav {
   text-decoration: underline;
 }
 
-.title {
-  font-size: 76px;
-  margin-bottom: 12px;
-  text-align: left;
-  line-height: 1;
-}
 
-.title--secondary {
-  font-size: 48px;
-  font-weight: 700;
-}
