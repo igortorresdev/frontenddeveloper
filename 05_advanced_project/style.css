@@ -28,7 +28,7 @@ section {
 input, 
 textarea {
   width: 100%;
-  box-sizing: transparent;
+  box-sizing: border-box;
   background-color: transparent;
   color: white;
   font-size: 20px;

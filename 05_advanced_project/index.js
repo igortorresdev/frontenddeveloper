@@ -1,7 +1,3 @@
-// template_42vutgs
-// service_9h7iln6
-// f995vnwAD6i8m3mjD
-
 function contact(event) {
   event.preventDefault();
  
@@ -12,7 +8,7 @@ function contact(event) {
   emailjs
   .sendForm(
     'service_9h7iln6', 
-    'template_42vutgs', 
+    'template_6prjiwt', 
     event.target,
     'f995vnwAD6i8m3mjD',
   ).then(() => {
@@ -21,6 +17,16 @@ function contact(event) {
     success.classList.add('modal__overlay--visible');
   }).catch((error) => {
     loading.classList.remove('modal__overlay--visible');
+
+    console.error("EmailJS error:", error);
+    console.error("Status:", error.status);
+    console.error("Message:", error.text);
+
     alert("The email service is temporarily unavailable.");
   });
+}
+
+function closeModal() {
+  const success = document.querySelector('.modal__overlay--success');
+  success.classList.remove('modal__overlay--visible');
 }
