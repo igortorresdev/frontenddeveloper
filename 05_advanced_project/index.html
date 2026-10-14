@@ -83,38 +83,60 @@
       </a>
       <div class="modal">
         <div class="modal__half modal__about">
-          <h3 class="
-          modal__title,
-          modal__title--about
-          ">
-            Here's a bit about me.
+          <h3 class="modal__title modal__title--about">
+            <span class="teal">Heres a bit about me.</span>
           </h3>
-          <h4 class="
-          modal__sub-title,
-          modal__sub-title--about
-          ">
+          <h4 class="modal__sub-title modal__sub-title--about">
             Frontend Software Engineer
           </h4>
           <p class="modal__para">
-            I'm a Front-End Developer passionate about creating modern, responsive, and user-friendly websites. Skilled in HTML, CSS, and JavaScript, I focus on clean code, intuitive design, and seamless user experiences.<br>
-            I bring creativity, strong problem-solving skills, and a commitment to continuous improvement. My goal is to build impactful digital experiences while contributing to a team that values innovation and quality.
+            I'm a <b class="teal">frontend software engineer</b> passionate about creating modern, responsive, and user-friendly websites. Skilled in HTML, CSS, and JavaScript, I focus on clean code, intuitive design, and <b class="teal">seamless user experiences.</b><br>
+            I bring creativity, <b class="teal">strong problem-solving skills</b>, and a commitment to continuous improvement. My goal is to build impactful digital experiences while contributing to a team that values <b class="teal">innovation and quality.</b>
           </p>
           <div class="modal__languages">
             <figure class="modal__language">
               <img class="modal__language--img" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original.svg" alt="Language Icon">
+              <span class="language__name">HTML</span>
             </figure>
             <figure class="modal__language">
               <img class="modal__language--img" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original.svg" alt="Language Icon">
+              <span class="language__name">CSS</span>
             </figure>
             <figure class="modal__language">
               <img class="modal__language--img" src="https://cdn.iconscout.com/icon/free/png-256/javascript-1-225993.png" alt="Language Icon">
+              <span class="language__name">JavaScript</span>
             </figure>
             <figure class="modal__language">
               <img class="modal__language--img" src="https://cdn.iconscout.com/icon/free/png-256/react-3-1175109.png" alt="Language Icon">
+              <span class="language__name">React</span>
             </figure>
           </div>
         </div>
-        <div class="modal__half modal__contact">Let's have a chat!</div>
+        <div class="modal__half modal__contact">
+          <h3 class="modal__title modal__title--contact">
+            Let's have a chat!
+          </h3>
+          <h4 class="modal__sub-title modal__sub-title--contact">
+            I would love to hear from you!
+          </h4>
+          <form id="contact__form" action="">
+            <div class="form__item">
+              <label class="form__item--label">Name:
+                <input class="input" name="user_name" type="text" required></input>
+              </label>
+            </div>
+            <div class="form__item">
+              <label class="form__item--label">Email:
+                <input class="input" name="user_email" type="email" required></input>
+              </label>
+            </div>
+            <div class="form__item">
+              <label class="form__item--label">Message:
+                <textarea class="input" name="message" required></textarea>
+              </label>
+            </div>
+          </form>
+        </div>
       </div>
     </section>
     <section class="projects">
