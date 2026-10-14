@@ -121,21 +121,33 @@
           </h4>
           <form id="contact__form" action="">
             <div class="form__item">
-              <label class="form__item--label">Name:
+              <label class="form__item--label">
+                <span class="teal">*</span> Name:
                 <input class="input" name="user_name" type="text" required></input>
               </label>
             </div>
             <div class="form__item">
-              <label class="form__item--label">Email:
+              <label class="form__item--label">
+                <span class="teal">*</span> Email:
                 <input class="input" name="user_email" type="email" required></input>
               </label>
             </div>
             <div class="form__item">
-              <label class="form__item--label">Message:
+              <label class="form__item--label">
+                <span class="teal">*</span> Message:
                 <textarea class="input" name="message" required></textarea>
               </label>
             </div>
+            <button id="contact__form--submit" class="form__submit">
+              Send it my way!
+            </button>
           </form>
+          <div class="modal__overlay modal__overlay--loading">
+            <i class="fas fa-spinner"></i>
+          </div>
+          <div class="modal__overlay modal__overlay--success">
+            Thanks for reaching out! Look forward to connecting with you soon.
+          </div>
         </div>
       </div>
     </section>

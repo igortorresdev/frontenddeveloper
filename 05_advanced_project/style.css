@@ -35,6 +35,7 @@ input, textarea {
   border-left: none;
   border-right: none;
   height: 40px;
+  transition: all 0.3s ease;
 }
 
 textarea { 
@@ -46,6 +47,14 @@ textarea {
 label {
   font-size: 16px;
   font-weight: bold;
+}
+
+input:hover, textarea:hover {
+  border-color: #dcdfe6;
+}
+
+input:focus, textarea:focus {
+  border-color: #00c9b7;
 }
 
 .container {
@@ -283,15 +292,16 @@ nav {
 .modal__half {
   width: 50%;
   padding: 40px 72px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
 }
 
 .modal__about {
   background-color: white;
   color: black;
   font-size: 24px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
 }
 
 .modal__languages {
@@ -342,7 +352,7 @@ nav {
 }
 
 .modal__sub-title {
-  font-size: 18px;
+  font-size: 16px;
   margin: 0 0 24px 0;
 }
 
@@ -354,6 +364,74 @@ nav {
 
 .form__item {
   margin-bottom: 20px;
+}
+
+.form__submit {
+  background-color: #00c9b7;
+  color: white;
+  font-size: 24px;
+  font-weight: 700;
+  max-width: 240px;
+  padding: 12px 24px;
+  border: 2px solid #00c9b7;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.form__submit:hover {
+  background-color: transparent;
+  border-color: #ffffff;
+  transform: scale(1.1);
+}
+
+.form__submit:active {
+  transform: scale(0.95);
+  border-color: #00c9b7;
+  color: #00c9b7;
+}
+
+.modal__overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal__overlay--loading {
+  background-color: #00c9b7;
+  font-size: 80px;
+  z-index: -1;
+}
+
+.modal__overlay--success {
+  background-color: #4bb543;
+  font-size: 40px;
+  font-weight: 700;
+  text-align: center;
+  padding: 28px;
+  z-index: 10;
+}
+
+.modal__overlay--success.active {
+  opacity: 1;
+}
+
+.fa-spinner {
+  animation: spinner 1s linear infinite;
+}
+
+@keyframes spinner {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
 
 /* 
