@@ -25,16 +25,20 @@ section {
   background-color: rgb(245, 245, 245);
 }
 
-input, textarea {
+input, 
+textarea {
   width: 100%;
-  background-color: #061b3d;
+  box-sizing: transparent;
   color: white;
-  outline: none;
+  font-size: 20px;
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  padding: 8px 8px;
+
+  border: none;
   border: 3px solid #c0c4cc;
-  border-top: none;
-  border-left: none;
-  border-right: none;
-  height: 40px;
+  outline: none;
+
   transition: all 0.3s ease;
 }
 
@@ -392,6 +396,7 @@ nav {
 }
 
 .modal__overlay {
+  box-sizing: border-box;
   position: absolute;
   top: 0;
   left: 0;
@@ -413,12 +418,12 @@ nav {
   font-size: 40px;
   font-weight: 700;
   text-align: center;
-  padding: 28px;
-  z-index: 10;
+  padding: 40px;
+  z-index: -1;
 }
 
-.modal__overlay--success.active {
-  opacity: 1;
+.modal__overlay--visible {
+  z-index: 1;
 }
 
 .fa-spinner {
@@ -433,6 +438,19 @@ nav {
     transform: rotate(360deg);
   }
 }
+
+.modal__exit {
+  position: absolute;
+  top: 30px;
+  right: 40px;
+  font-size: 36px;
+  font-weight: 700;
+  color: white;
+  cursor: pointer;
+  z-index: 100;
+}
+
+
 
 /* 
 
