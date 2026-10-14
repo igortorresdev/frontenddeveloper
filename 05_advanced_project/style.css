@@ -128,10 +128,12 @@ li {
   display: flex;
 }
 
-/* .social__link i,
+.social__link i,
 .mail__btn i {
-  transform: translateX(1px);
-} */
+  position: relative;
+  top: 5px;
+  transform: translateY(5px);
+}
 
 .social__link,
 .mail__btn {
@@ -152,9 +154,9 @@ li {
 }
 
 .mail__btn {
-  width: 40px;
-  height: 40px;
-  font-size: 24px;
+  width: 52px;
+  height: 52px;
+  font-size: 32px;
   border-radius: 50%;
   border: none;
   background-color: #061b3d;
