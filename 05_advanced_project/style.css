@@ -105,8 +105,21 @@ input:focus, textarea:focus {
   bottom: 0px;
   height: 3px;
   width: 0;
-  right: 0;
+  right: 0px;
   transition: all 0.3s ease;
+}
+
+.link__hover-effect:hover:after {
+  left: 0;
+  width: 100%;
+}
+
+.nav__link--anchor::after {
+  right: 8px;
+}
+
+.nav__link--anchor:hover::after {
+  width: calc(100% - 16px);
 }
 
 .link__hover-effect--white:after {
@@ -115,11 +128,6 @@ input:focus, textarea:focus {
 
 .link__hover-effect--black:after {
   background-color: #242424;
-}
-
-.link__hover-effect:hover:after {
-  left: 0%;
-  width: 100%;
 }
 
 nav,
