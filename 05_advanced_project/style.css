@@ -118,8 +118,8 @@ input:focus, textarea:focus {
 }
 
 .link__hover-effect:hover:after {
-  left: 7%;
-  width: 87%;
+  left: 0%;
+  width: 100%;
 }
 
 nav,
@@ -164,9 +164,6 @@ nav,
 .dark-mode .scroll__icon:after,
 .dark-mode .link__hover-effect--black:after {
   background-color: white;
-}
-.dark-mode .link__hover-effect--white:after {
-  background-color: #061b3d;
 }
 
 .dark-mode .mail__btn {
