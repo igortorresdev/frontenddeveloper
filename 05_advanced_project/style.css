@@ -23,6 +23,7 @@ a {
 
 section {
   background-color: rgb(245, 245, 245);
+  /* transition: all 0.3s ease; */
 }
 
 input, 
@@ -154,6 +155,28 @@ nav,
 
 .dark-mode #personal-logo {
   filter: brightness(0) invert(1);
+}
+
+.dark-mode .scroll__icon {
+  border-color: white;
+}
+
+.dark-mode .scroll__icon:after,
+.dark-mode .link__hover-effect--black:after {
+  background-color: white;
+}
+.dark-mode .link__hover-effect--white:after {
+  background-color: #061b3d;
+}
+
+.dark-mode .mail__btn {
+  background-color: white;
+  color: #242424;
+}
+
+.dark-mode .social__link {
+  background-color: white;
+  color: #242424;
 }
 
 /* 
@@ -613,7 +636,7 @@ footer {
 }
 
 .footer__logo--img {
-  width: 90px;
+  width: 100px;
   height: auto;
   filter: brightness(0) invert(1);
 }
