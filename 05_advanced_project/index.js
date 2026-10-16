@@ -3,6 +3,13 @@ function contact(event) {
  
   const loading = document.querySelector('.modal__overlay--loading');
   const success = document.querySelector('.modal__overlay--success');
+  const submitButton = event.target.querySelector(".form__submit");
+
+  // 1. Prevent duplicate submissions
+  if (submitButton.disabled) return;
+  submitButton.disabled = true;
+  
+  // 2. Show loading overlay  
   loading.classList.add('modal__overlay--visible');
 
   emailjs
@@ -23,6 +30,9 @@ function contact(event) {
     console.error("Message:", error.text);
 
     alert("The email service is temporarily unavailable.");
+  }).finally(() => {
+      // 3. Enable the button when the request finishes
+      submitButton.disabled = false;
   });
 }
 
