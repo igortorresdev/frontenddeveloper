@@ -94,6 +94,14 @@ input:focus, textarea:focus {
   color: #00c9b7;
 }
 
+.coral {
+  color: #e85d5d;
+}
+
+.amber {
+  color: #f2b84b;
+}
+
 .link__hover-effect {
   position: relative;
 } 
@@ -631,6 +639,7 @@ nav {
 */
 
 footer {
+  position: relative;
   background-color: #242424;
   display: flex;
   align-items: center;
@@ -664,4 +673,111 @@ footer {
 .footer__social--link,
 .footer__copyright {
   color: white;
+}
+
+/* 
+
+  Shapes
+
+  first row - top = 15vh left = 5vw
+  second row - top = 50vh left = 50vw
+  third row - top = 80vh left = 80vw
+
+*/
+
+.shape {
+  position: fixed;
+}
+
+.shape--0 {
+  top: 15vh;
+  left: 5vw;
+}
+
+.shape--1 {
+  top: 15vh;
+  left: 50vw;
+}
+
+.shape--2 {
+  top: 15vh;
+  left: 80vw;
+}
+
+.shape--3 {
+  top: 50vh;
+  left: 50vw;
+}
+
+.shape--4 {
+  top: 50vh;
+  left: 80vw;
+}
+
+.shape--5 {
+  top: 80vh;
+  left: 5vw;
+}
+
+.shape--6 {
+  top: 80vh;
+  left: 50vw;
+}
+
+.shape--7 {
+  top: 80vh;
+  left: 80vw;
+}
+
+/* 
+
+  Responsiveness
+
+*/
+
+/* small phones, tablets, large smartphones */
+
+@media (max-width: 768px) {
+  .shape {
+    display: none;
+  }
+
+  .title {
+    font-size: 50px;
+    margin: 0;
+    padding: 0;
+    
+  }
+
+  .header {
+    margin: 20px;
+  }
+
+  .header__para {
+    font-size: 16px;
+    padding: 0;
+    margin: 0;
+  }
+
+  .modal {
+    top: 0;
+    left: 0;
+    transform: none;
+    height: auto;
+    width: 100%;
+    flex-direction: column;
+    border-radius: 0;
+  }
+
+  .modal__half {
+    width: 100%;
+    padding: 0;
+    margin: 0;
+  }
+
+  .row {
+    margin: 0;
+    padding: 0;
+  }
+
 }

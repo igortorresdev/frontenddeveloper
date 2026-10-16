@@ -1,3 +1,7 @@
+let isModalOpen = false;
+let contrastToggle = false;
+
+
 function contact(event) {
   event.preventDefault();
  
@@ -36,7 +40,7 @@ function contact(event) {
   });
 }
 
-let isModalOpen = false;
+
 function toggleModal() {
   if (!isModalOpen) {
     document.body.classList += " modal--open";
@@ -53,7 +57,7 @@ function closeModal() {
   success.classList.remove('modal__overlay--visible');
 }
 
-let contrastToggle = false;
+
 function toggleContrast() {
   contrastToggle = !contrastToggle;
   if (contrastToggle) {
@@ -61,4 +65,18 @@ function toggleContrast() {
   } else {
     document.body.classList.remove("dark-mode");
   }
+}
+
+function moveBackground(event) {
+  const shapes = document.querySelectorAll('.shape');
+  const x = event.clientX / 20;
+  const y = event.clientY / 20;
+
+  shapes.forEach((shape, index) => {
+    // const offsetX = (index + 1) * 10 * x;
+    // const offsetY = (index + 1) * 10 * y;
+    const isOdd = index % 2 !== 0;
+    const boolInt = isOdd ? -1 : 1;
+    shape.style.transform = `translate(${x * boolInt}px, ${y * boolInt}px)`;
+  });
 }
