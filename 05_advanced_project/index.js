@@ -47,7 +47,7 @@ let contrastToggle = false;
 function toggleContrast() {
   contrastToggle = !contrastToggle;
   if (contrastToggle) {
-    document.body.classList += " .dark-mode";
+    document.body.classList += " dark-mode";
   } else {
     document.body.classList.remove("dark-mode");
   }

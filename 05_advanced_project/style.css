@@ -87,11 +87,11 @@ input:focus, textarea:focus {
 }
 
 .navy {
-  color: #061b3d !important;
+  color: #061b3d;
 }
 
 .teal {
-  color: #00c9b7 !important;
+  color: #00c9b7;
 }
 
 .link__hover-effect {
