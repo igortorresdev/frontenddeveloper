@@ -42,3 +42,13 @@ function closeModal() {
   const success = document.querySelector('.modal__overlay--success');
   success.classList.remove('modal__overlay--visible');
 }
+
+let contrastToggle = false;
+function toggleContrast() {
+  contrastToggle = !contrastToggle;
+  if (contrastToggle) {
+    document.body.classList += " dark-mode";
+  } else {
+    document.body.classList.remove("dark-mode");
+  }
+}

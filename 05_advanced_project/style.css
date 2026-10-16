@@ -137,6 +137,24 @@ nav,
   transition: all 400ms;
 }
 
+.dark-mode .title,
+.dark-mode .section__title,
+.dark-mode .section__subtitle,
+.dark-mode .nav__link--list,
+.dark-mode .fa-adjust,
+.dark-mode .header__para {
+  background-color: #242424;
+  color: white;
+}
+
+.dark-mode section {
+  background-color: #242424;
+  color: white;
+}
+
+.dark-mode #personal-logo {
+  filter: brightness(0) invert(1);
+}
 
 /* 
 
