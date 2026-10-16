@@ -140,7 +140,7 @@ nav,
 .dark-mode .title,
 .dark-mode .section__title,
 .dark-mode .section__subtitle,
-.dark-mode .nav__link--list,
+.dark-mode .nav__link--anchor,
 .dark-mode .fa-adjust,
 .dark-mode .header__para {
   background-color: #242424;
@@ -613,8 +613,9 @@ footer {
 }
 
 .footer__logo--img {
-  width: 70px;
+  width: 90px;
   height: auto;
+  filter: brightness(0) invert(1);
 }
 
 .footer__social--list {
