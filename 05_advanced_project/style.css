@@ -119,6 +119,7 @@ input:focus, textarea:focus {
 }
 
 .nav__link--anchor:hover::after {
+  left: 8px;
   width: calc(100% - 16px);
 }
 
