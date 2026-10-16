@@ -9,7 +9,6 @@
 
 li {
   list-style-type: none;
-  margin: 100px;
 }
 
 p {
@@ -183,10 +182,6 @@ nav,
 .dark-mode .social__link {
   background-color: white;
   color: #242424;
-}
-
-body {
-  isolation: isolate;
 }
 
 /* 
@@ -551,7 +546,10 @@ nav {
 }
 
 .project__list {
-  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 100px;
+
 }
 
 .project__img {
