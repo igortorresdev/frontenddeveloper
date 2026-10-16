@@ -26,6 +26,18 @@ function contact(event) {
   });
 }
 
+let isModalOpen = false;
+function toggleModal() {
+  if (!isModalOpen) {
+    document.body.classList += " modal--open";
+    isModalOpen = true;
+  }
+  else {
+    document.body.classList.remove("modal--open");
+    isModalOpen = false;
+  }
+}
+
 function closeModal() {
   const success = document.querySelector('.modal__overlay--success');
   success.classList.remove('modal__overlay--visible');
