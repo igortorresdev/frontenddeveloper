@@ -3,7 +3,7 @@
 * {
   margin: 0;
   padding: 0;
-  /* box-sizing: border-box; */
+  box-sizing: border-box;
   font-family: "Roboto", sans-serif;
 }
 
@@ -746,11 +746,11 @@ footer {
     font-size: 50px;
     margin: 0;
     padding: 0;
-    
+
   }
 
   .header {
-    margin: 20px;
+    margin: 0;
   }
 
   .header__para {
@@ -763,6 +763,7 @@ footer {
     top: 0;
     left: 0;
     transform: none;
+    padding: 20px 20px;
     height: auto;
     width: 100%;
     flex-direction: column;
@@ -775,9 +776,19 @@ footer {
     margin: 0;
   }
 
+  .modal__para,
+  .modal__sub-title,
+  .modal__title {
+    padding: 4px 8px;
+  }
+
   .row {
     margin: 0;
     padding: 0;
   }
+
+  .form__submit {
+    left: 8px;
+    bottom: 8px;
 
 }
