@@ -1,12 +1,14 @@
 async function renderBooks() {
   const booksWrapper = document.querySelector('.books');
+  booksWrapper.classList += ' books__loading';
   const books = await getBooks();
+  booksWrapper.classList.remove('books__loading');
   
   const booksHTML = books.map(book => {
     return `
     <div class="book">
       <figure class="book__img--wrapper">
-        <img src="${book.url}" alt="" class="book__title">
+        <img src="${book.url}" alt="" class="book__img">
       </figure>
       <div class="book__title">
         ${book.title}
@@ -15,12 +17,11 @@ async function renderBooks() {
         ${getRatingStars(book.rating)}
       </div>
       <div class="book__price">
-        <span class="book__price--normal">$${book.originalPrice.toFixed(2)}</span> $${book.salePrice}  
+        ${getPrice(book.originalPrice, book.salePrice)}   
       </div>
     </div>`
   }).join('');
   booksWrapper.innerHTML = booksHTML;
-
 }
 
 setTimeout(() => {
@@ -33,9 +34,9 @@ function filterBooks() {
   getBooks().then(books => {
     let filteredBooks = [...books];
     if (filter === 'Low_To_High') {
-      filteredBooks.sort((a, b) => a.salePrice - b.salePrice);
+      filteredBooks.sort((a, b) => (a.salePrice || a.originalPrice) - (b.salePrice || b.originalPrice));
     } else if (filter === 'High_To_Low') {
-      filteredBooks.sort((a, b) => b.salePrice - a.salePrice);
+      filteredBooks.sort((a, b) => (b.salePrice || b.originalPrice) - (a.salePrice || a.originalPrice));
     } else if (filter === 'Discounted') {
       filteredBooks = filteredBooks.filter(book => book.salePrice !== null);
     } else if (filter === 'Rating') {
@@ -45,7 +46,7 @@ function filterBooks() {
     const booksHTML = filteredBooks.map(book => {
       return `<div class="book">
       <figure class="book__img--wrapper">
-        <img src="${book.url}" alt="" class="book__title">
+        <img src="${book.url}" alt="" class="book__img">
       </figure>
       <div class="book__title">
         ${book.title}
@@ -54,12 +55,21 @@ function filterBooks() {
         ${getRatingStars(book.rating)}
       </div>
       <div class="book__price">
-        <span class="book__price--normal">$${book.originalPrice.toFixed(2)}</span> $${book.salePrice}  
+        ${getPrice(book.originalPrice, book.salePrice)}  
       </div>
     </div>`;
     }).join('');
     booksWrapper.innerHTML = booksHTML;
   });
+}
+
+
+function getPrice(originalPrice, salePrice) {
+  if(!salePrice) {
+    return `$${originalPrice.toFixed(2)}`;
+  } else {
+    return `<span class="book__price--normal">$${originalPrice.toFixed(2)}</span> $${salePrice.toFixed(2)}`;
+  }
 }
 
 function getRatingStars(rating) {
