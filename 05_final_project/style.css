@@ -128,9 +128,10 @@ button:hover {
 }
 
 .anime-card .anime-score {
-  font-size: 18px;
+  font-size: 20px;
   color: #00d9c0;
-  font-weight: 600;
+  display: flex;
+  gap: 4px;
 }
 
 .anime-card:hover {

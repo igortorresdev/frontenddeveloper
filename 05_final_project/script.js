@@ -99,11 +99,41 @@ function showAnime() {
     year.textContent = "Year: " + (item.startDate.year || "Unknown");
 
     const score = document.createElement("p");
-    score.className = "anime-score"; 
-    score.textContent =
-      "Score: " +
-      (item.averageScore == null ? 
-        "Not rated" : item.averageScore + "%");
+    score.className = "anime-score";
+
+    if (item.averageScore == null) {
+      score.textContent = "Not rated";
+    } else {
+      const rating = item.averageScore / 20;
+
+      const fullStars = Math.floor(rating);
+      const halfStar = rating % 1 >= 0.5;
+      const emptyStars = 5 - fullStars - (halfStar ? 1 : 0);
+
+      let starsHTML = "";
+
+      for (let i = 0; i < fullStars; i++) {
+        starsHTML += '<i class="fas fa-star"></i>';
+      }
+
+      if (halfStar) {
+        starsHTML += '<i class="fas fa-star-half-alt"></i>';
+      }
+
+      for (let i = 0; i < emptyStars; i++) {
+        starsHTML += '<i class="far fa-star"></i>';
+      }
+
+      score.innerHTML = starsHTML;
+      score.setAttribute("aria-label", `${rating.toFixed(1)} out of 5 stars`);
+    }
+
+    // const score = document.createElement("p");
+    // score.className = "anime-score"; 
+    // score.textContent =
+    //   "Score: " +
+    //   (item.averageScore == null ? 
+    //     "Not rated" : item.averageScore + "%");
 
     // const popularity = document.createElement("p");
     // popularity.textContent =
