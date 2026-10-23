@@ -16,7 +16,7 @@ function getAnime() {
   const query = `
     query ($search: String) {
       Page(page: 1, perPage: 20) {
-        media(type: ANIME, search: $search, sort: POPULARITY_DESC) {
+        media(type: ANIME, search: $search, sort: SCORE_DESC) {
           id
           title { romaji }
           coverImage { large }
@@ -90,18 +90,19 @@ function showAnime() {
     const score = document.createElement("p");
     score.textContent =
       "Score: " +
-      (item.averageScore == null ? "Not rated" : item.averageScore + "/100");
-      
-    const popularity = document.createElement("p");
-    popularity.textContent =
-      "Popularity: " +
-      (item.popularity == null ? "Not available" : item.popularity);
+      (item.averageScore == null ? 
+        "Not rated" : item.averageScore + "%");
+
+    // const popularity = document.createElement("p");
+    // popularity.textContent =
+    //   "Popularity: " +
+    //   (item.popularity == null ? "Not available" : item.popularity);
 
     card.appendChild(image);
     card.appendChild(title);
     card.appendChild(year);
     card.appendChild(score);
-    card.appendChild(popularity);
+    // card.appendChild(popularity);
     animeList.appendChild(card);
   });
 }
