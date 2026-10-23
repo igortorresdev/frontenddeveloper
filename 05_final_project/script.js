@@ -11,7 +11,8 @@ function getAnime() {
   animeList.innerHTML = "";
 
   // AniList uses GraphQL. 20 titles per page are requested.
-  // romaji is Japanese written using the Latin alphabet.
+  // romaji is Japanese written using the Latin alphabet. 
+  // eg. "Shingeki no Kyojin" for "進撃の巨人".
 
   const query = `
   query ($search: String, $genre: String, $year: FuzzyDateInt) {
@@ -40,7 +41,7 @@ function getAnime() {
     body: JSON.stringify({
       query: query,
       variables: { search: search || null },
-    }), //Search by title, genre or year, null just return all results.
+    }), //Search by title or year, null just return all results.
   })
     .then((response) => {
       if (!response.ok) throw new Error("API status: " + response.status);
@@ -58,7 +59,7 @@ function getAnime() {
 }
 
 function showAnime() {
-  let sortedAnime = [...anime];
+  let sortedAnime = [...anime]; // copy of the anime array.
   const sort = sortSelect.value;
 
   if (sort === "sort_az") {
