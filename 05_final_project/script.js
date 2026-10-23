@@ -104,28 +104,30 @@ function showAnime() {
     if (item.averageScore == null) {
       score.textContent = "Not rated";
     } else {
-      const rating = item.averageScore / 20;
+        const rating = item.averageScore / 20;
 
-      const fullStars = Math.floor(rating);
-      const halfStar = rating % 1 >= 0.5;
-      const emptyStars = 5 - fullStars - (halfStar ? 1 : 0);
+        const fullStars = Math.floor(rating);
+        const halfStar = rating % 1 >= 0.5;
+        const emptyStars = 5 - fullStars - (halfStar ? 1 : 0);
 
-      let starsHTML = "";
+        let starsHTML = "";
 
-      for (let i = 0; i < fullStars; i++) {
-        starsHTML += '<i class="fas fa-star"></i>';
-      }
+        for (let i = 0; i < fullStars; i++) {
+          starsHTML += '<i class="fas fa-star"></i>';
+        }
 
-      if (halfStar) {
-        starsHTML += '<i class="fas fa-star-half-alt"></i>';
-      }
+        if (halfStar) {
+          starsHTML += '<i class="fas fa-star-half-alt"></i>';
+        }
 
-      for (let i = 0; i < emptyStars; i++) {
-        starsHTML += '<i class="far fa-star"></i>';
-      }
+        for (let i = 0; i < emptyStars; i++) {
+          starsHTML += '<i class="far fa-star"></i>';
+        }
 
-      score.innerHTML = starsHTML;
-      score.setAttribute("aria-label", `${rating.toFixed(1)} out of 5 stars`);
+        score.innerHTML = starsHTML;
+        // console.log(item.averageScore);
+        // console.log(starsHTML);
+
     }
 
     // const score = document.createElement("p");
