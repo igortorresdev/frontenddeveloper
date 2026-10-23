@@ -69,13 +69,13 @@ input {
 }
 
 button { 
-  background: #8B5CF6; 
+  background: #00d9c0; 
   color: white; 
   cursor: pointer; 
 }
 
 button:hover { 
-  background: #7C3AED; 
+  background: #01af9b; 
 }
 
 .anime-list {
@@ -85,10 +85,19 @@ button:hover {
 }
 
 .anime-card {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 14px;
   background: #132732;
-  padding: 12px;
-  /* border: 1px solid #727171; */
-  border-radius: 8px;
+  border-radius: 12px;
+  transition: transform 0.2s ease, border-color 0.2s ease;
+}
+
+.anime-card .anime-score {
+  font-size: 18px;
+  color: #00d9c0;
+  font-weight: 600;
 }
 
 .anime-card img {
@@ -98,12 +107,21 @@ button:hover {
   border-radius: 5px;
 }
 
-.anime-card h3 { 
+.anime-card h3 {
+  color: #f0fcff;
+  margin: 0;
   font-size: 22px; 
 }
 
 .anime-card p { 
-  font-size: 18px; 
+  color: #91aab3;
+  margin: 0;
+  font-size: 18px;
+}
+
+.anime-card:hover {
+  transform: translateY(-4px);
+  border-color: #00d9c0;
 }
 
 footer { 
