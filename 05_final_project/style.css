@@ -23,6 +23,7 @@ h1, h2, h3, p {
 nav, footer {
   color: white;
   padding: 15px 25px;
+  background: #132732;
 }
 
 .landing {
@@ -36,6 +37,13 @@ nav, footer {
   display: flex;
   gap: 10px;
   margin: 25px 0;
+}
+
+#search {
+  background: #132732;
+  color: #F5F3FF;
+  font-color: #F5F3FF;
+  border: none;
 }
 
 input, 

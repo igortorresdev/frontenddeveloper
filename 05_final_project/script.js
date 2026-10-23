@@ -14,19 +14,25 @@ function getAnime() {
   // romaji is Japanese written using the Latin alphabet.
 
   const query = `
-    query ($search: String) {
-      Page(page: 1, perPage: 20) {
-        media(type: ANIME, search: $search, sort: SCORE_DESC) {
-          id
-          title { romaji }
-          coverImage { large }
-          startDate { year }
-          averageScore
-          popularity
-        }
+  query ($search: String, $genre: String, $year: FuzzyDateInt) {
+    Page(page: 1, perPage: 20) {
+      media(
+        type: ANIME
+        search: $search
+        genre: $genre
+        startDate_greater: $year
+        sort: SCORE_DESC
+      ) {
+        id
+        title { romaji }
+        coverImage { large }
+        startDate { year }
+        genres
+        averageScore
+        popularity
       }
     }
-  `;
+  }`;
 
   fetch("https://graphql.anilist.co", {
     method: "POST",
@@ -55,15 +61,15 @@ function showAnime() {
   let sortedAnime = [...anime];
   const sort = sortSelect.value;
 
-  if (sort === "az") {
+  if (sort === "sort_az") {
     sortedAnime.sort((a, b) => a.title.romaji.localeCompare(b.title.romaji));
-  } else if (sort === "za") {
+  } else if (sort === "sort_za") {
     sortedAnime.sort((a, b) => b.title.romaji.localeCompare(a.title.romaji));
-  } else if (sort === "newest") {
+  } else if (sort === "sort_newest") {
     sortedAnime.sort(
       (a, b) => (b.startDate.year || 0) - (a.startDate.year || 0),
     );
-  } else if (sort === "oldest") {
+  } else if (sort === "sort_oldest") {
     sortedAnime.sort(
       (a, b) => (a.startDate.year || 9999) - (b.startDate.year || 9999),
     );
@@ -84,6 +90,10 @@ function showAnime() {
     const title = document.createElement("h3");
     title.textContent = item.title.romaji;
 
+    const genre = document.createElement("p");
+    genre.textContent =
+      "Genres: " + item.genres.join(", ");
+
     const year = document.createElement("p");
     year.textContent = "Year: " + (item.startDate.year || "Unknown");
 
@@ -100,9 +110,10 @@ function showAnime() {
 
     card.appendChild(image);
     card.appendChild(title);
+    card.appendChild(genre);
     card.appendChild(year);
     card.appendChild(score);
-    // card.appendChild(popularity);
+      // card.appendChild(popularity);
     animeList.appendChild(card);
   });
 }
