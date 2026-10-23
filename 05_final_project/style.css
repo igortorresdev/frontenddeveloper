@@ -42,25 +42,36 @@ nav, footer {
 #search {
   background: #132732;
   color: #F5F3FF;
-  font-color: #F5F3FF;
   border: none;
+}
+
+#search::placeholder {
+  color: #F5F3FF;
+}
+
+#message {
+  margin-bottom: 20px;
 }
 
 input, 
 select, 
 button {
   padding: 12px;
-  border: 1px solid #ccc;
+  border: none;
   border-radius: 5px;
-  font-size: 18px;
+  font-size: 20px;
+  font-family: 'Inter', sans-serif;
 }
 
 input { 
-  flex: 1; min-width: 0; 
+  flex: 1; 
+  min-width: 0; 
 }
 
 button { 
-  background: #8B5CF6; color: white; cursor: pointer; 
+  background: #8B5CF6; 
+  color: white; 
+  cursor: pointer; 
 }
 
 button:hover { 
