@@ -98,6 +98,7 @@ function showAnime() {
     year.textContent = "Year: " + (item.startDate.year || "Unknown");
 
     const score = document.createElement("p");
+    score.className = "anime-score"; 
     score.textContent =
       "Score: " +
       (item.averageScore == null ? 
@@ -113,8 +114,9 @@ function showAnime() {
     card.appendChild(genre);
     card.appendChild(year);
     card.appendChild(score);
-      // card.appendChild(popularity);
+    // card.appendChild(popularity);
     animeList.appendChild(card);
+    // console.log(card);
   });
 }
 
