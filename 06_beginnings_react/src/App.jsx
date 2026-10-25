@@ -9,7 +9,7 @@ import "./comps/Modal.css";
 
 import { useState } from "react";
 
-//cd "D:\Documents\FED Projects\frontenddeveloper\06_beginings_react"
+//cd "D:\Documents\FED Projects\frontenddeveloper\06_beginnings_react"
 //npm run dev
 
 function App() {
