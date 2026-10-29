@@ -1,7 +1,7 @@
 import "./App.css";
 import Nav from "./comps/Nav.jsx";
 
-import Home from "./pages/Home.jsx";
+import Home from "./pages/home.jsx";
 import About from "./pages/About.jsx";
 import Contact from "./pages/Contact.jsx";
 import Users from "./pages/Users.jsx";
@@ -31,7 +31,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
         <Route path="/contact" element={<Contact />} />
-        <Route path="/users/:username" element={<Users />} />
+        <Route path="/users/:id" element={<Users />} />
       </Routes>
     </Router>
   );
