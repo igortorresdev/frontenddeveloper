@@ -1,10 +1,10 @@
 import "./App.css";
+import Nav from "./comps/Nav.jsx";
 
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-
-import Home from "./pages/home.jsx";
+import Home from "./pages/Home.jsx";
 import About from "./pages/About.jsx";
 import Contact from "./pages/Contact.jsx";
+import Users from "./pages/Users.jsx";
 
 // import Todo from "./comps/Todo";
 // import Title from "./comps/Title";
@@ -12,6 +12,9 @@ import Contact from "./pages/Contact.jsx";
 // import Counter from "./comps/Counter";
 // import "./comps/Todo.css";
 // import "./comps/Modal.css";
+
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+// import { Link } from "react-router-dom";
 
 // import { useState } from "react";
 
@@ -22,15 +25,15 @@ import Contact from "./pages/Contact.jsx";
 function App() {
   
   return (
-    <div>
-      <Router>
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/contact" element={<Contact />} />
-        </Routes>
-      </Router>
-    </div>
+    <Router>
+      <Nav />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/contact" element={<Contact />} />
+        <Route path="/users/:username" element={<Users />} />
+      </Routes>
+    </Router>
   );
 }
 export default App;
