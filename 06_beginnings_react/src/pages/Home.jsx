@@ -44,22 +44,19 @@ function Home() {
         <p>{error}</p>
       ) : (
         <div>
-          {users.map((user) => (
-            <li key={user.id}>  
-              <Link to={`/users/${user.id}`}>
-                <User
-                  id={user.id}
-                  name={user.name}
-                  email={user.email}
-                  username={user.username} />
-              </Link>
-            </li>
-            // <div key={user.id} style={{ border: "1px solid black", margin: "10px", padding: "10px" }}>
-            //   <div>Name: {user.name}</div>
-            //   <div>Email: {user.email}</div>
-            //   <div>Username: {user.username}</div>
-            // </div>
-          ))}
+          <ul>
+            {users.map((user) => (
+              <li key={user.id}>  
+                <Link to={`/users/${user.id}`}>
+                  <User
+                    id={user.id}
+                    name={user.name}
+                    email={user.email}
+                    username={user.username} />
+                </Link>
+              </li>
+            ))}
+          </ul>
         </div>
       )}
     </div>
