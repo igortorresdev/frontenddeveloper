@@ -1,11 +1,13 @@
-import React from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faBars } from "@fortawesome/free-solid-svg-icons";
+// import logo from "../assets/logo.png";
 
 export default function Nav() {
   return (
     <nav>
-      <div className="nav_container">
+      <div className="nav__container">
         <a href="/">
-          <img src={require("../assets/logo.png")} alt="logo" />
+          <span>My Store</span>
         </a>
         <ul className="nav__links">
           <li className="nav__list">
