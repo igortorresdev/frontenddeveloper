@@ -1,3 +1,4 @@
+import React from 'react'
 import Nav from './components/Nav'
 
 function App() {
@@ -5,6 +6,7 @@ function App() {
 
   return (
     <>
+      test
       <Nav />
 
     </>

@@ -1,7 +1,18 @@
-import { createRoot } from 'react-dom/client'
+import React from 'react'
+import ReactDom from 'react-dom'
 import './index.css'
 import App from './App.jsx'
+// import reportWebVitals from './reportWebVitals'
+import { library } from '@fortawesome/fontawesome-svg-core'
+import { faBars } from '@fortawesome/free-solid-svg-icons'
 
-createRoot(document.getElementById('root')).render(
-  <App />
- )
+library.add(faBars)
+
+ReactDom.render(
+
+    <App />,
+
+  document.getElementById('root')
+)
+
+// reportWebVitals()
