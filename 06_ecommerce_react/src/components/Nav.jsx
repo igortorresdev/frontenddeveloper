@@ -7,7 +7,9 @@ export default function Nav() {
   return (
     <nav>
       <div className="nav__container">
-        <img src={LibraryLogo} alt="logo" />
+        <a href="/">
+          <img src={LibraryLogo} alt="logo" />
+        </a>
         <ul className="nav__links">
           <li className="nav__list">
             <a className="nav__link" href="/">Home</a>
