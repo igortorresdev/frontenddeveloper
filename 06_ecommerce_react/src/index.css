@@ -93,6 +93,8 @@ button:active {
 .logo {
   width: 160px;
   height: auto;
+  max-height: 48px;
+  object-fit: contain;
 }
 
 .nav__container {
