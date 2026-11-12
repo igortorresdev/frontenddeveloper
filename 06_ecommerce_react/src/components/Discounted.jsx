@@ -1,6 +1,6 @@
-import React from 'react'
-import { books } from '../data'
-import Book from '../ui/Book'
+import React from "react";
+import { books } from "../data";
+import Book from "./ui/Book";
 
 function Discounted() {
   return (
@@ -12,16 +12,16 @@ function Discounted() {
           </h2>
           <div className="books">
             {books
-            .filter((book) => book.salePrice !== null)
-            .slice(0, 8)
-            .map((book) => (
-              <Book key={book.id} book={book} />
-            ))}
+              .filter((book) => book.salePrice !== null)
+              .slice(0, 8)
+              .map((book) => (
+                <Book key={book.id} book={book} />
+              ))}
           </div>
         </div>
       </div>
     </section>
-  )
+  );
 }
 
-export default Discounted
+export default Discounted;

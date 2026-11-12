@@ -1,6 +1,6 @@
 import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import Highlight from "../ui/Highlight";
+import Highlight from "./ui/Highlight";
 import { faBolt, faBookOpen, faTags } from "@fortawesome/free-solid-svg-icons";
 
 const Highlights = () => {
@@ -12,7 +12,6 @@ const Highlights = () => {
             Why choose <span className="purple">our library</span>
           </h2>
           <div className="highlight__wrapper">
-            
             <Highlight
               icon={faBolt}
               subtitle="Fast and Easy"
@@ -28,11 +27,8 @@ const Highlights = () => {
               subtitle="Affordable"
               para="Get your hands on popular books for as little as $10."
             />
-            
           </div>
         </div>
-
-
       </div>
     </section>
   );
