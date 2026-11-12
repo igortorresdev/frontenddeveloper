@@ -1,6 +1,5 @@
 import React from 'react'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faStar, faStarHalf } from '@fortawesome/free-solid-svg-icons'
+import StarRating from '../components/StarRating'
 
 function Book({ book }) {
   return (
@@ -17,11 +16,9 @@ function Book({ book }) {
         <a href="" className="book__title--link">
           {book.title}
         </a>
-        <div className="book__ratings">
-          {Array.from({ length: book.rating }, (_, index) => (
-            <FontAwesomeIcon key={index} icon={faStar} />
-          ))}
-        </div>
+        
+        <StarRating rating={book.rating} />
+        
         <div className="book__price">
           {book.salePrice ? (
             <>
