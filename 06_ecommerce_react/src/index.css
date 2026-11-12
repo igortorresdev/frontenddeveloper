@@ -92,6 +92,7 @@ button:active {
 
 .logo {
   width: 160px;
+  height: auto;
 }
 
 .nav__container {

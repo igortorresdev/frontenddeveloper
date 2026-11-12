@@ -4,9 +4,9 @@ import App from "./App.jsx";
 
 // import reportWebVitals from './reportWebVitals'
 import { library } from '@fortawesome/fontawesome-svg-core'
-import { faBars, faCartShopping, faX } from '@fortawesome/free-solid-svg-icons'
+import { faBars, faBolt, faCartShopping, faX, faBookOpen, faTags } from '@fortawesome/free-solid-svg-icons'
 
-library.add(faBars, faCartShopping, faX)
+library.add(faBars, faCartShopping, faX, faBolt, faBookOpen, faTags)
 
 createRoot(document.getElementById("root")).render(
 

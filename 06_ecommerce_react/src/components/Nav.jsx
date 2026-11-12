@@ -8,7 +8,7 @@ export default function Nav() {
     <nav>
       <div className="nav__container">
         <a href="/">
-          <img src={LibraryLogo} alt="logo" />
+          <img className="logo" src={LibraryLogo} alt="logo" />
         </a>
         <ul className="nav__links">
           <li className="nav__list">
